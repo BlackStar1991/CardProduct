@@ -1,0 +1,19 @@
+{
+  "name": "start_html",
+  "version": "2.0.0",
+  "authors": [
+    "Andry_Zirka <zirkaandry@ukr.net>"
+  ],
+  "dependencies": {
+    "waypoints": "^4.0.0",
+    "normalize-css": "normalize.css#^3.0.3",
+    "matchHeight": "^0.6.0",
+    "jquery": "^3.2.1",
+    "font-awesome": "^4.7.0",
+    "bootstrap-validator": "^0.11.9",
+    "bootstrap": "^3.3.7",
+    "slick-carousel": "^1.6.0",
+    "foundation": "^5.5.3"
+  }
+
+}

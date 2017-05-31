@@ -1,0 +1,89 @@
+@import "../components/variables";
+/*********************************************/
+	/*Desktop First Method*/
+/*********************************************/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : $site) {
+
+}
+
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : $tablet-landscape) {
+
+}
+
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : $tablet) {
+
+}
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : $phone-landscape) {
+
+
+	/*Disable Animation on Mobile Devices*/
+	.animated {
+		/*CSS transitions*/
+		-o-transition-property: none !important;
+		-moz-transition-property: none !important;
+		-ms-transition-property: none !important;
+		-webkit-transition-property: none !important;
+		transition-property: none !important;
+		/*CSS transforms*/
+		-o-transform: none !important;
+		-moz-transform: none !important;
+		-ms-transform: none !important;
+		-webkit-transform: none !important;
+		transform: none !important;
+		/*CSS animations*/
+		-webkit-animation: none !important;
+		-moz-animation: none !important;
+		-o-animation: none !important;
+		-ms-animation: none !important;
+		animation: none !important;
+	}
+}
+
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : $phone) {
+
+}
+
+
+/*********************************************/
+	/*Mobile First Method*/
+/*********************************************/
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : $phone) {
+
+}
+
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : $phone-landscape) {
+
+}
+
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : $tablet) {
+
+}
+
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : $tablet-landscape) {
+
+}
+
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : $site) {
+
+}
