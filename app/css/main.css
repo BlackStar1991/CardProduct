@@ -3337,7 +3337,7 @@ button {
   .sliderBlock_positionControls__paginatorItem {
     float: left;
     width: 18px;
-    height: 3px;
+    height: 10px;
     margin-left: 5px;
     background-color: #D7D7D7;
     cursor: pointer; }
@@ -3357,25 +3357,42 @@ button {
 
 .block_specification {
   float: right;
-  margin-top: 8px; }
+  margin-top: 8px;
+  cursor: pointer;
+  color: #536dfe;
+  transition: all 0.5s; }
   .block_specification__button {
-    width: 30px;
-    height: 11px;
-    color: #536dfe;
-    font-family: 'Titillium Web', sans-serif;
-    font-size: 13px;
-    font-weight: 600;
+    display: inline-block;
+    margin-right: 7px;
+    height: 100%;
+    font-size: 17px;
     text-transform: uppercase;
-    cursor: pointer; }
-    .block_specification__button:before {
-      content: "\f013";
-      margin-right: 7px;
-      width: 14px;
-      height: 12px;
-      color: #536dfe;
-      font-family: "FontAwesome";
-      font-size: 17px;
-      text-transform: uppercase; }
+    -webkit-transform: rotate(0);
+        -ms-transform: rotate(0);
+            transform: rotate(0);
+    transition: -webkit-transform 0.5s;
+    transition: transform 0.5s;
+    transition: transform 0.5s, -webkit-transform 0.5s;
+    -webkit-transform-origin: center center;
+        -ms-transform-origin: center center;
+            transform-origin: center center; }
+  .block_specification:hover .block_specification__button__rotate {
+    transition: -webkit-transform 0.5s;
+    transition: transform 0.5s;
+    transition: transform 0.5s, -webkit-transform 0.5s;
+    -webkit-transform: rotate(1turn);
+        -ms-transform: rotate(1turn);
+            transform: rotate(1turn); }
+  .block_specification:hover {
+    color: #f1425d; }
+
+.block_specification__text {
+  width: 30px;
+  height: 11px;
+  font-family: 'Titillium Web', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase; }
 
 .block_model {
   display: inline-block;
@@ -3397,26 +3414,76 @@ button {
     padding: 0;
     font-size: 24px; }
 
-.block_product__advantagesProduct {
-  width: 271px;
-  height: 41px;
-  margin-top: 14px;
-  color: #646b6f;
-  font-size: 17px;
-  line-height: 24px; }
+.block_product {
+  position: relative;
+  width: 100%; }
+  .block_product__advantagesProduct {
+    width: 271px;
+    height: 41px;
+    margin-top: 14px;
+    color: #646b6f;
+    font-size: 17px;
+    line-height: 24px; }
+  .block_product__link {
+    line-height: 23px;
+    color: #536dfe; }
 
-.block_product__description {
+.block_informationAboutDevice {
+  position: relative;
+  width: 100%;
+  overflow: hidden; }
+
+.block_descriptionInformation {
   width: 304px;
   height: 104px;
-  margin-top: 30px;
+  margin-top: 10px;
   font-size: 14px;
   font-weight: 400;
   line-height: 23px;
   color: #263238; }
 
-.block_product__link {
-  line-height: 23px;
-  color: #536dfe; }
+.block_descriptionCharacteristic {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 100%;
+  height: 100%;
+  z-index: 30; }
+  .block_descriptionCharacteristic__disActive {
+    -webkit-animation-direction: reverse;
+            animation-direction: reverse; }
+  .block_descriptionCharacteristic__active {
+    -webkit-animation: moveCharackeristic ease-out 0.5s;
+            animation: moveCharackeristic ease-out 0.5s;
+    -webkit-animation-fill-mode: forwards;
+            animation-fill-mode: forwards; }
+
+@-webkit-keyframes moveCharackeristic {
+  0% {
+    left: 100%; }
+  100% {
+    left: 0; } }
+
+@keyframes moveCharackeristic {
+  0% {
+    left: 100%; }
+  100% {
+    left: 0; } }
+
+.block_specificationInformation_table {
+  position: relative;
+  height: 99.9%;
+  background-color: #fff; }
+  .block_specificationInformation_table tr {
+    border-collapse: collapse;
+    border: 1px solid #000; }
+  .block_specificationInformation_table th {
+    border: 1px solid #000;
+    font-weight: bold; }
+  .block_specificationInformation_table td {
+    border-collapse: collapse;
+    text-align: center;
+    border: 1px solid #000; }
 
 .block_rating {
   width: 100%;
@@ -3519,9 +3586,6 @@ input[type="checkbox"] + label, input[type="radio"] + label {
   padding: 0;
   color: #37474f;
   font-size: 13px; }
-
-input[type="text"] {
-  width: 52px; }
 
 .block_quantity {
   position: relative;
