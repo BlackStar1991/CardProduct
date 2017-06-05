@@ -75,14 +75,35 @@ window.onload = function () {
 
 
         blockCharacteristiic.classList.toggle("block_descriptionCharacteristic__active");
-        blockCharacteristiic.classList.toggle("block_descriptionCharacteristic__disActive");
-
-
 
 
     }
 
-    
+
+/////  QUANTITY ITEMS
+
+   var  up   = document.getElementsByClassName('block_quantity__up')[0],
+        down = document.getElementsByClassName('block_quantity__down')[0],
+        input = document.getElementsByClassName('block_quantity__number')[0];
+
+
+    function getValue() {
+        return parseInt(input.value);
+    }
+
+    up.onclick = function(event) {
+        input.value = getValue() + 1;
+    }
+    down.onclick = function(event) {
+        if (input.value <= 1){
+           return 1;
+        } else {
+            input.value = getValue() - 1;
+        }
+
+    }
+
+
 
 
 };

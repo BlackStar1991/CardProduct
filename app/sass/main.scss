@@ -453,15 +453,10 @@ button {
   height: 100%;
   z-index:30;
 
-
-  &__disActive{
-    animation-direction: reverse;
-  }
-
+  transition: left, ease-out, 0.5s;
 
   &__active{
-    animation: moveCharackeristic ease-out 0.5s;
-    animation-fill-mode: forwards;
+    left: 0;
   }
 }
 
