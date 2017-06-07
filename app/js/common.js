@@ -1,19 +1,16 @@
 window.onload = function () {
 
-    var $ = document.querySelectorAll;
-
-
-   //// SLIDER
+    //// SLIDER
 
     var slider = document.getElementsByClassName("sliderBlock_items");
     var slides = document.getElementsByClassName("sliderBlock_items__itemPhoto");
-    var next = document.getElementsByClassName("sliderBlock_controls__arrowForward")[0]; // getElementsByClassName возвращает массив!
+    var next = document.getElementsByClassName("sliderBlock_controls__arrowForward")[0];
     var previous = document.getElementsByClassName("sliderBlock_controls__arrowBackward")[0];
     var items = document.getElementsByClassName("sliderBlock_positionControls")[0];
     var currentSlideItem = document.getElementsByClassName("sliderBlock_positionControls__paginatorItem");
 
     var currentSlide = 0;
-    var slideInterval = setInterval(nextSlide, 5000);
+    var slideInterval = setInterval(nextSlide, 5000);  /// Delay time of slides
 
     function nextSlide() {
         goToSlide(currentSlide + 1);
@@ -41,7 +38,6 @@ window.onload = function () {
     };
 
 
-   
     function goToSlideAfterPushTheMiniBlock() {
         for (var i = 0; i < currentSlideItem.length; i++) {
             currentSlideItem[i].onclick = function (i) {
@@ -49,7 +45,9 @@ window.onload = function () {
                 goToSlide(index);
             }
         }
-    }goToSlideAfterPushTheMiniBlock();
+    }
+
+    goToSlideAfterPushTheMiniBlock();
 
 
 /////////////////////////////////////////////////////////
@@ -62,7 +60,7 @@ window.onload = function () {
     var buttonInformation = document.getElementsByClassName("block_specification__informationShow")[0];
 
     var blockCharacteristiic = document.querySelector(".block_descriptionCharacteristic");
-    var activeCharacteristic  = document.querySelector(".block_descriptionCharacteristic__active");
+    var activeCharacteristic = document.querySelector(".block_descriptionCharacteristic__active");
 
 
     buttonFullSpecification.onclick = function () {
@@ -77,33 +75,30 @@ window.onload = function () {
         blockCharacteristiic.classList.toggle("block_descriptionCharacteristic__active");
 
 
-    }
+    };
 
 
 /////  QUANTITY ITEMS
 
-   var  up   = document.getElementsByClassName('block_quantity__up')[0],
+    var up = document.getElementsByClassName('block_quantity__up')[0],
         down = document.getElementsByClassName('block_quantity__down')[0],
         input = document.getElementsByClassName('block_quantity__number')[0];
-
 
     function getValue() {
         return parseInt(input.value);
     }
 
-    up.onclick = function(event) {
+    up.onclick = function (event) {
         input.value = getValue() + 1;
-    }
-    down.onclick = function(event) {
-        if (input.value <= 1){
-           return 1;
+    };
+    down.onclick = function (event) {
+        if (input.value <= 1) {
+            return 1;
         } else {
             input.value = getValue() - 1;
         }
 
     }
-
-
 
 
 };

@@ -3556,26 +3556,36 @@ input[type="checkbox"] + label, input[type="radio"] + label {
     color: #A2A9AD;
     font-size: 12px; }
 
+.radio_button {
+  position: absolute;
+  opacity: 0; }
+
 .block_goodColor {
   margin-top: 29px;
   width: 100%; }
   .block_goodColor__allColors {
     width: 100%;
     margin-top: 14px; }
-  .block_goodColor__color {
+  .block_goodColor__radio {
     display: inline-block;
     width: 21px;
     height: 21px;
     border-radius: 50%;
-    margin-left: 20px;
+    margin-left: 10% !important;
     background-color: #e8e6e3;
     cursor: pointer; }
-  .block_goodColor__active {
-    width: 25px;
-    height: 25px;
-    box-shadow: 0 0 5px 3px rgba(83, 109, 254, 0.5);
-    border: 2px solid #fff;
-    background-color: #3c383a; }
+
+.radio_button:checked + .block_goodColor__radio {
+  width: 25px;
+  height: 25px;
+  box-shadow: 0 0 5px 3px rgba(83, 109, 254, 0.5);
+  border: 2px solid #fff; }
+
+.block_goodColor__black {
+  background-color: #3c383a; }
+
+.block_goodColor__silver {
+  background-color: silver; }
 
 .text_specification {
   padding: 0;
@@ -3656,7 +3666,10 @@ input[type="checkbox"] + label, input[type="radio"] + label {
   padding: 0;
   color: #fff;
   background-color: #536dfe;
-  font-size: 17px; }
+  font-size: 17px;
+  transition: all 0.3s; }
+  .button.button_addToCard:hover {
+    background-color: #0d2660; }
 
 /*********************************************/
 /*FOOTER*/
